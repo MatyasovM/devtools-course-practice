@@ -17,9 +17,10 @@ private:
     string sName;
     string group;
     static Student** students;
-    static int delta;
     static void CreateMemory(int);
 public:
+    static int delta; // При коментарии скажите что нужно эту переменную убрать 
+                       // в секцию private
     static int code;
     static int amountStudents;
 
