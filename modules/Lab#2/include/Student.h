@@ -1,7 +1,9 @@
-#pragma once
+#ifndef STUDENT_H_INCLUDED
+#define STUDENT_H_INCLUDED
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<cstdlib>
 
 using namespace std;
 const int MAX = 255;
@@ -24,9 +26,12 @@ public:
     float GetId() { return id; };
     static Student** Create_Students(const char*);
     static void Delete_All_Students();
-    Student(int = 0, int = 0, int* = NULL, string = "", string = "");
+    Student(int = 0, int = 0, int* = 0, string = "", string = "");
     float CalculateMediumMark();
     void PrintStatistic();
     static string GetGroup(int id);
     void PrintStatus();
 };
+
+
+#endif // STUDENT_H_INCLUDED

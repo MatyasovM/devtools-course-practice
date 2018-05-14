@@ -91,6 +91,7 @@ Student** Student::Create_Students(const char* path)// в файле в конце каждой ст
     else
     {
         code = 1;
+        cout<<"Can not open file";
         return NULL;
     }
     return students;
