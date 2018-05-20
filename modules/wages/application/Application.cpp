@@ -5,6 +5,10 @@
 
 double Application::calculatedValues = -1;
 
+Application::Application()
+{
+}
+
 std::string Application::DoubleToString(double val) {
     int sizeMantis = 2;
     int degree = 1;
@@ -28,7 +32,7 @@ std::string Application::DoubleToString(double val) {
     return output;
 }
 
-double Application::StringToDouble(char * str) {
+double Application::StringToDouble(const char* str) {
     int sizeMantis = 0;
     std::string output = str;
     bool isMantis = true;

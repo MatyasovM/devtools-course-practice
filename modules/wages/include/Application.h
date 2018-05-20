@@ -8,9 +8,9 @@
 class Application {
     static double calculatedValues;
 public:
-    Application() {}
+    Application();
     static std::string DoubleToString(double val);
-    static double StringToDouble(char* str);
+    static double StringToDouble(const char* str);
     static Month IntToMonth(int val);
     static double GetCalculatedValues() { return calculatedValues; }
     static std::string CalculateWages(double salary, double administrativeLeaveHours, double overtime, Month month);
