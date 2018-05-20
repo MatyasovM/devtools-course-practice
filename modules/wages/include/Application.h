@@ -1,7 +1,7 @@
 // Copyright 2018 Matyasov Mixail
 
 #pragma once
-#include"Wages.h"
+#include"include/Wages.h"
 #include<iostream>
 #include<string>
 
