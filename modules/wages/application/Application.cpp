@@ -5,7 +5,7 @@
 
 double Application::calculatedValues = -1;
 
-Application::Application()
+Application::Application(double val)
 {
 }
 

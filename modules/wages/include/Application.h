@@ -10,7 +10,7 @@
 class Application {
     static double calculatedValues;
 public:
-    Application();
+    explicit Application(double val = 0);
     static std::string DoubleToString(double val);
     static double StringToDouble(const char* str);
     static Month IntToMonth(int val);
