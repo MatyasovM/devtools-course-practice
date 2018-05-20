@@ -6,7 +6,6 @@
 TEST(Application, can_double_to_string) {
     std::string str = "123.54";
     Application app;
-    Vector vec;
 
 
     EXPECT_TRUE(str.compare(app.DoubleToString(123.54)));

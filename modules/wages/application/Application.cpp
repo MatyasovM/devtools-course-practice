@@ -9,7 +9,8 @@ Application::Application(double val)
 {
 }
 
-std::string Application::DoubleToString(double val) {
+std::string Application::DoubleToString(double val)
+{
     int sizeMantis = 2;
     int degree = 1;
     std::string output;
@@ -31,6 +32,29 @@ std::string Application::DoubleToString(double val) {
 
     return output;
 }
+
+//std::string Application::DoubleToString(double val) {
+//    int sizeMantis = 2;
+//    int degree = 1;
+//    std::string output;
+//
+//    for (int i = 0; i < sizeMantis; i++)
+//        degree *= 10;
+//    int integerPart = (int)val;
+//    int mantis = (int)((val - integerPart) * degree);
+//
+//    while (integerPart != 0) {
+//        output += integerPart % 10 + '0';
+//        integerPart /= 10;
+//    }
+//    output += '.';
+//    while (mantis != 0) {
+//        output += mantis % 10 + '0';
+//        mantis /= 10;
+//    }
+//
+//    return output;
+//}
 
 double Application::StringToDouble(const char* str) {
     int sizeMantis = 0;
