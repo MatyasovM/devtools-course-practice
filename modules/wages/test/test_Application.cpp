@@ -20,13 +20,13 @@ TEST(Application, can_int_to_string) {
 TEST(Application, can_string_to_double) {
     double val = 123.54;
 
-    EXPECT_EQ(val, Application::StringToDouble("123.54"));
+    EXPECT_EQ(val, Application::StringToDouble((char*)"123.54"));
 }
 
 TEST(Application, can_string_to_int) {
     double val = 123;
 
-    EXPECT_EQ(val, Application::StringToDouble("123"));
+    EXPECT_EQ(val, Application::StringToDouble((char*)"123"));
 }
 
 TEST(Application, can_int_to_Month) {
