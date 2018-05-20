@@ -50,12 +50,12 @@ TEST(Application, can_CalculateWages) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = "";
-    argv[1] = "CalculateWages";
-    argv[2] = "10000";
-    argv[3] = "0";
-    argv[4] = "0";
-    argv[5] = "0";
+    argv[0] = (char*)"";
+    argv[1] = (char*)"CalculateWages";
+	argv[2] = (char*)"10000";
+    argv[3] = (char*)"0";
+    argv[4] = (char*)"0";
+    argv[5] = (char*)"0";
     Application app;
 
 
@@ -66,12 +66,12 @@ TEST(Application, can_CalucateHourlyPay) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = "";
-    argv[1] = "HourlyPay";
-    argv[2] = "10000";
-    argv[3] = "0";
-    argv[4] = "0";
-    argv[5] = "0";
+    argv[0] = (char*)"";
+    argv[1] = (char*)"HourlyPay";
+    argv[2] = (char*)"10000";
+    argv[3] = (char*)"0";
+    argv[4] = (char*)"0";
+    argv[5] = (char*)"0";
     Application app;
 
 
@@ -82,12 +82,12 @@ TEST(Application, can_CalculationOvertimePayment) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = "";
-    argv[1] = "CalculationOvertimePayment";
-    argv[2] = "10000";
-    argv[3] = "0";
-    argv[4] = "0";
-    argv[5] = "0";
+    argv[0] = (char*)"";
+    argv[1] = (char*)"CalculationOvertimePayment";
+    argv[2] = (char*)"10000";
+    argv[3] = (char*)"0";
+    argv[4] = (char*)"0";
+    argv[5] = (char*)"0";
     Application app;
 
 
@@ -98,12 +98,12 @@ TEST(Application, can_CalculationWagesWithoutOvertime) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = "";
-    argv[1] = "CalculationWagesWithoutOvertime";
-    argv[2] = "10000";
-    argv[3] = "0";
-    argv[4] = "0";
-    argv[5] = "0";
+    argv[0] = (char*)"";
+    argv[1] = (char*)"CalculationWagesWithoutOvertime";
+    argv[2] = (char*)"10000";
+    argv[3] = (char*)"0";
+    argv[4] = (char*)"0";
+    argv[5] = (char*)"0";
     Application app;
 
 

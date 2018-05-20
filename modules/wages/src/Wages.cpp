@@ -1,6 +1,6 @@
 // Copyright 2018 Sharov Ivan
 
-#include"Wages.h"
+#include"include\Wages.h"
 #include<string.h>
 #include <string>
 
