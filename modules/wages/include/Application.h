@@ -1,6 +1,8 @@
 // Copyright 2018 Matyasov Mixail
 
-#pragma once
+#ifndef MODULES_WAGES_INCLUDE_APPLICATION_H_
+#define MODULES_WAGES_INCLUDE_APPLICATION_H_
+
 #include"include/Wages.h"
 #include<iostream>
 #include<string>
@@ -20,3 +22,5 @@ public:
 
     std::string operator()(int argc, char** argv);
 };
+
+#endif   //  MODULES_WAGES_INCLUDE_APPLICATION_H_
