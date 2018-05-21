@@ -3,7 +3,7 @@
 #ifndef MODULES_WAGES_INCLUDE_APPLICATION_H_
 #define MODULES_WAGES_INCLUDE_APPLICATION_H_
 
-#include"include\Wages.h"
+#include"include/Wages.h"
 #include<iostream>
 #include<string>
 
