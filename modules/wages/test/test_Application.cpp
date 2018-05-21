@@ -1,7 +1,7 @@
 // Copyright 2018 Matyasov Mixail
 
 #include <gtest/gtest.h>
-#include"include\Application.h"
+#include"include/Application.h"
 
 TEST(Application, can_double_to_string) {
     std::string str = "123.54";
