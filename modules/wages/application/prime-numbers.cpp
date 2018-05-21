@@ -1,6 +1,6 @@
 // Copyright 2018 Matyasov Mixail
 
-#include "include/Application.h"
+#include "include/prime-numbers-app.h"
 #include <string>
 
 double Application::calculatedValues = -1;
