@@ -1,7 +1,7 @@
 // Copyright 2018 Sharov Ivan
 
 #include <gtest/gtest.h>
-#include "include/PrimeNumbers.h"
+#include "include\Wages.h"
 
 
 TEST(Sharov_Ivan_WagesTest, Calling_An_Empty_Constructor) {
