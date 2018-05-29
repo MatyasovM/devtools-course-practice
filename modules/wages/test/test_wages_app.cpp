@@ -23,14 +23,14 @@ TEST(Application, can_string_to_double) {
     double val = 123.54;
     Application app;
 
-    EXPECT_EQ(val, app.StringToDouble((char*)"123.54"));
+    EXPECT_EQ(val, app.StringToDouble(static_cast<char*>("123.54")));
 }
 
 TEST(Application, can_string_to_int) {
     double val = 123;
     Application app;
 
-    EXPECT_EQ(val, app.StringToDouble((char*)"123"));
+    EXPECT_EQ(val, app.StringToDouble(static_cast<char*>("123")));
 }
 
 TEST(Application, can_int_to_Month) {
@@ -55,12 +55,12 @@ TEST(Application, can_CalculateWages) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = (char*)"";
-    argv[1] = (char*)"CalculateWages";
-	argv[2] = (char*)"10000";
-    argv[3] = (char*)"0";
-    argv[4] = (char*)"0";
-    argv[5] = (char*)"0";
+    argv[0] = static_cast<char*>("");
+    argv[1] = static_cast<char*>("CalculateWages");
+	argv[2] = static_cast<char*>("10000");
+    argv[3] = static_cast<char*>("0");
+    argv[4] = static_cast<char*>("0");
+    argv[5] = static_cast<char*>("0");
     Application app;
 
 
@@ -71,12 +71,12 @@ TEST(Application, can_CalucateHourlyPay) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = (char*)"";
-    argv[1] = (char*)"HourlyPay";
-    argv[2] = (char*)"10000";
-    argv[3] = (char*)"0";
-    argv[4] = (char*)"0";
-    argv[5] = (char*)"0";
+    argv[0] = static_cast<char*>("");
+    argv[1] = static_cast<char*>("HourlyPay");
+    argv[2] = static_cast<char*>("10000");
+    argv[3] = static_cast<char*>("0");
+    argv[4] = static_cast<char*>("0");
+    argv[5] = static_cast<char*>("0");
     Application app;
 
 
@@ -87,12 +87,12 @@ TEST(Application, can_CalculationOvertimePayment) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = (char*)"";
-    argv[1] = (char*)"CalculationOvertimePayment";
-    argv[2] = (char*)"10000";
-    argv[3] = (char*)"0";
-    argv[4] = (char*)"0";
-    argv[5] = (char*)"0";
+    argv[0] = static_cast<char*>("");
+    argv[1] = static_cast<char*>("CalculationOvertimePayment");
+    argv[2] = static_cast<char*>("10000");
+    argv[3] = static_cast<char*>("0");
+    argv[4] = static_cast<char*>("0");
+    argv[5] = static_cast<char*>("0");
     Application app;
 
 
@@ -103,12 +103,12 @@ TEST(Application, can_CalculationWagesWithoutOvertime) {
     int argc = 6;
     char** argv;
     argv = new char*[argc];
-    argv[0] = (char*)"";
-    argv[1] = (char*)"CalculationWagesWithoutOvertime";
-    argv[2] = (char*)"10000";
-    argv[3] = (char*)"0";
-    argv[4] = (char*)"0";
-    argv[5] = (char*)"0";
+    argv[0] = static_cast<char*>("");
+    argv[1] = static_cast<char*>("CalculationWagesWithoutOvertime");
+    argv[2] = static_cast<char*>("10000");
+    argv[3] = static_cast<char*>("0");
+    argv[4] = static_cast<char*>("0");
+    argv[5] = static_cast<char*>("0");
     Application app;
 
 

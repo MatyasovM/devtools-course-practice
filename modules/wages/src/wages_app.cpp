@@ -9,8 +9,7 @@ Application::Application(double val) {
     calculatedValues = val;
 }
 
-std::string Application::DoubleToString(double val)
-{
+std::string Application::DoubleToString(double val) {
     int sizeMantis = 2;
     int degree = 1;
     std::string output;
@@ -116,25 +115,30 @@ Month Application::IntToMonth(int val)
     }
 }
 
-std::string Application::CalculateWages(double salary, double administrativeLeaveHours, double overtime, Month month) {
+std::string Application::CalculateWages(double salary,
+double administrativeLeaveHours, double overtime, Month month) {
     Wages w(salary, administrativeLeaveHours, overtime, month);
     calculatedValues = w.calculationFullWages();
     return "\nWages = " + DoubleToString(calculatedValues) + "\n";
 }
 
-std::string Application::CalculateHourlyPay(double salary, double administrativeLeaveHours, double overtime, Month month) {
+std::string Application::CalculateHourlyPay(double salary, 
+double administrativeLeaveHours, double overtime, Month month) {
     Wages w(salary, administrativeLeaveHours, overtime, month);
     calculatedValues = w.calculationHourPayment();
     return "\nHourly pay = " + DoubleToString(calculatedValues) + "\n";
 }
 
-std::string Application::CalculationWagesWithoutOvertime(double salary, double administrativeLeaveHours, double overtime, Month month) {
+std::string Application::CalculationWagesWithoutOvertime(double salary,
+double administrativeLeaveHours, double overtime, Month month) {
     Wages w(salary, administrativeLeaveHours, overtime, month);
     calculatedValues = w.calculationWagesWithoutOvertime();
-    return "\nWages without overtime = " + DoubleToString(calculatedValues) + "\n";
+    return "\nWages without overtime = " + DoubleToString(calculatedValues)
+    + "\n";
 }
 
-std::string Application::CalculationOvertimePayment(double salary, double administrativeLeaveHours, double overtime, Month month) {
+std::string Application::CalculationOvertimePayment(double salary,
+double administrativeLeaveHours, double overtime, Month month) {
     Wages w(salary, administrativeLeaveHours, overtime, month);
     calculatedValues = w.calculationPaymentOvertime();
     return "\nOvertime payment = " + DoubleToString(calculatedValues) + "\n";
@@ -145,13 +149,21 @@ std::string Application::operator()(int argc, char ** argv) {
         std::string values = argv[1];
 
         if (values == "CalculateWages")
-            return CalculateWages(StringToDouble(argv[2]), StringToDouble(argv[3]), StringToDouble(argv[4]), IntToMonth(argv[5][0] - '0'));
+            return CalculateWages(StringToDouble(argv[2]), 
+            StringToDouble(argv[3]), StringToDouble(argv[4]), 
+            IntToMonth(argv[5][0] - '0'));
         else if (values == "HourlyPay")
-            return CalculateHourlyPay(StringToDouble(argv[2]), StringToDouble(argv[3]), StringToDouble(argv[4]), IntToMonth(argv[5][0] - '0'));
+            return CalculateHourlyPay(StringToDouble(argv[2]),
+            StringToDouble(argv[3]), StringToDouble(argv[4]), 
+            IntToMonth(argv[5][0] - '0'));
         else if (values == "CalculationOvertimePayment")
-            return CalculationOvertimePayment(StringToDouble(argv[2]), StringToDouble(argv[3]), StringToDouble(argv[4]), IntToMonth(argv[5][0] - '0'));
+            return CalculationOvertimePayment(StringToDouble(argv[2]),
+            StringToDouble(argv[3]), StringToDouble(argv[4]), 
+            IntToMonth(argv[5][0] - '0'));
         else
-            return CalculationWagesWithoutOvertime(StringToDouble(argv[2]), StringToDouble(argv[3]), StringToDouble(argv[4]), IntToMonth(argv[5][0] - '0'));
+            return CalculationWagesWithoutOvertime(StringToDouble(argv[2]),
+            StringToDouble(argv[3]), StringToDouble(argv[4]),
+            IntToMonth(argv[5][0] - '0'));
     }
 
     return "";
