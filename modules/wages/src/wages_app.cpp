@@ -33,29 +33,6 @@ std::string Application::DoubleToString(double val)
     return output;
 }
 
-//std::string Application::DoubleToString(double val) {
-//    int sizeMantis = 2;
-//    int degree = 1;
-//    std::string output;
-//
-//    for (int i = 0; i < sizeMantis; i++)
-//        degree *= 10;
-//    int integerPart = (int)val;
-//    int mantis = (int)((val - integerPart) * degree);
-//
-//    while (integerPart != 0) {
-//        output += integerPart % 10 + '0';
-//        integerPart /= 10;
-//    }
-//    output += '.';
-//    while (mantis != 0) {
-//        output += mantis % 10 + '0';
-//        mantis /= 10;
-//    }
-//
-//    return output;
-//}
-
 double Application::StringToDouble(const char* str) {
     int sizeMantis = 0;
     std::string output = str;
@@ -176,4 +153,6 @@ std::string Application::operator()(int argc, char ** argv) {
         else
             return CalculationWagesWithoutOvertime(StringToDouble(argv[2]), StringToDouble(argv[3]), StringToDouble(argv[4]), IntToMonth(argv[5][0] - '0'));
     }
+
+    return "";
 }
