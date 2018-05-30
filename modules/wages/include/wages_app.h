@@ -1,7 +1,7 @@
 // Copyright 2018 Matyasov Mixail
 
-#ifndef MODULES_WAGES_INCLUDE_WAGES_APP_H_ 
-#define MODULES_WAGES_INCLUDE_WAGES_APP_H_ 
+#ifndef MODULES_WAGES_INCLUDE_WAGES_APP_H_
+#define MODULES_WAGES_INCLUDE_WAGES_APP_H_
 
 #include<iostream>
 #include<string>
@@ -17,7 +17,8 @@ class Application {
     double GetCalculatedValues() { return calculatedValues; }
     std::string CalculateWages(double salary, double administrativeLeaveHours,
     double overtime, Month month);
-    std::string CalculateHourlyPay(double salary, double administrativeLeaveHours,
+    std::string CalculateHourlyPay(double salary, 
+    double administrativeLeaveHours,
     double overtime, Month month);
     std::string CalculationWagesWithoutOvertime(double salary,
     double administrativeLeaveHours,
