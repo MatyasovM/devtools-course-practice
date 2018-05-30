@@ -1,7 +1,7 @@
 // Copyright 2018 Matyasov Mixail
 
-#ifndef MODULES_WAGES_INCLUDE_APPLICATION_H_
-#define MODULES_WAGES_INCLUDE_APPLICATION_H_
+#ifndef MODULES_WAGES_INCLUDE_WAGES_APP_H_ 
+#define MODULES_WAGES_INCLUDE_WAGES_APP_H_ 
 
 #include<iostream>
 #include<string>
@@ -29,4 +29,4 @@ class Application {
     std::string operator()(int argc, char** argv);
 };
 
-#endif   //  MODULES_WAGES_INCLUDE_APPLICATION_H_
+#endif   //  MODULES_WAGES_INCLUDE_WAGES_APP_H_ 

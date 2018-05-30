@@ -1,6 +1,7 @@
 // Copyright 2018 Matyasov Mixail
 
 #include <gtest/gtest.h>
+#include <string>
 #include"include/wages_app.h"
 
 TEST(Application, can_double_to_string) {
@@ -57,7 +58,7 @@ TEST(Application, can_CalculateWages) {
     argv = new char*[argc];
     argv[0] = static_cast<char*>("");
     argv[1] = static_cast<char*>("CalculateWages");
-	argv[2] = static_cast<char*>("10000");
+    argv[2] = static_cast<char*>("10000");
     argv[3] = static_cast<char*>("0");
     argv[4] = static_cast<char*>("0");
     argv[5] = static_cast<char*>("0");
