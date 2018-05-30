@@ -16,8 +16,8 @@ std::string Application::DoubleToString(double val) {
 
     for (int i = 0; i < sizeMantis; i++)
         degree *= 10;
-    int integerPart = (int)val;
-    int mantis = (int)((val - integerPart) * degree);
+    int integerPart = static_cast<int>(val);
+    int mantis = static_cast<int>((val - integerPart) * degree);
 
     while (integerPart != 0) {
         output += integerPart % 10 + '0';
@@ -67,14 +67,13 @@ double Application::StringToDouble(const char* str) {
     double degree = 1;
     for (int i = 0; i < sizeMantis; i++)
         degree *= 10;
-    degree = (int)degree;
+    degree = static_cast<int>(degree);
     double result = intPart + mantis / degree;
 
     return result;
 }
 
-Month Application::IntToMonth(int val)
-{
+Month Application::IntToMonth(int val) {
     switch (val) {
     case 1:
         return January;
@@ -122,7 +121,7 @@ double administrativeLeaveHours, double overtime, Month month) {
     return "\nWages = " + DoubleToString(calculatedValues) + "\n";
 }
 
-std::string Application::CalculateHourlyPay(double salary, 
+std::string Application::CalculateHourlyPay(double salary,
 double administrativeLeaveHours, double overtime, Month month) {
     Wages w(salary, administrativeLeaveHours, overtime, month);
     calculatedValues = w.calculationHourPayment();
@@ -149,16 +148,16 @@ std::string Application::operator()(int argc, char ** argv) {
         std::string values = argv[1];
 
         if (values == "CalculateWages")
-            return CalculateWages(StringToDouble(argv[2]), 
-            StringToDouble(argv[3]), StringToDouble(argv[4]), 
+            return CalculateWages(StringToDouble(argv[2]),
+            StringToDouble(argv[3]), StringToDouble(argv[4]),
             IntToMonth(argv[5][0] - '0'));
         else if (values == "HourlyPay")
             return CalculateHourlyPay(StringToDouble(argv[2]),
-            StringToDouble(argv[3]), StringToDouble(argv[4]), 
+            StringToDouble(argv[3]), StringToDouble(argv[4]),
             IntToMonth(argv[5][0] - '0'));
         else if (values == "CalculationOvertimePayment")
             return CalculationOvertimePayment(StringToDouble(argv[2]),
-            StringToDouble(argv[3]), StringToDouble(argv[4]), 
+            StringToDouble(argv[3]), StringToDouble(argv[4]),
             IntToMonth(argv[5][0] - '0'));
         else
             return CalculationWagesWithoutOvertime(StringToDouble(argv[2]),

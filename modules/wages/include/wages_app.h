@@ -17,7 +17,7 @@ class Application {
     double GetCalculatedValues() { return calculatedValues; }
     std::string CalculateWages(double salary, double administrativeLeaveHours,
     double overtime, Month month);
-    std::string CalculateHourlyPay(double salary, 
+    std::string CalculateHourlyPay(double salary,
     double administrativeLeaveHours,
     double overtime, Month month);
     std::string CalculationWagesWithoutOvertime(double salary,
@@ -30,4 +30,4 @@ class Application {
     std::string operator()(int argc, char** argv);
 };
 
-#endif   //  MODULES_WAGES_INCLUDE_WAGES_APP_H_ 
+#endif   //  MODULES_WAGES_INCLUDE_WAGES_APP_H_
