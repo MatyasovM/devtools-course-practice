@@ -8,8 +8,7 @@ using ::testing::internal::RE;
 
 class WagesAppTest : public::testing::Test {
  protected:
-
-    void Act(int argc,char** argv) {
+    void Act(int argc, char** argv) {
         output = app(argc, argv);
     }
 
