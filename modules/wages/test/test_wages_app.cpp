@@ -4,114 +4,85 @@
 #include <string>
 #include"include/wages_app.h"
 
-TEST(Application, can_double_to_string) {
-    std::string str = "123.54";
+using ::testing::internal::RE;
+
+class WagesAppTest : public::testing::Test {
+ protected:
+
+    void Act(int argc,char** argv) {
+        output = app(argc, argv);
+    }
+
+    void Assert(std::string expected) {
+        EXPECT_TRUE(RE::PartialMatch(output, RE(expected)));
+    }
+
+ private:
+    std::string output;
     Application app;
+};
 
-
-    EXPECT_TRUE(str.compare(app.DoubleToString(123.54)));
-}
-
-TEST(Application, can_int_to_string) {
-    std::string str = "123";
-    Application app;
-
-
-    EXPECT_TRUE(str.compare(app.DoubleToString(123)));
-}
-
-TEST(Application, can_string_to_double) {
-    double val = 123.54;
-    Application app;
-
-    EXPECT_EQ(val, app.StringToDouble(const_cast<char*>("123.54")));
-}
-
-TEST(Application, can_string_to_int) {
-    double val = 123;
-    Application app;
-
-    EXPECT_EQ(val, app.StringToDouble(const_cast<char*>("123")));
-}
-
-TEST(Application, can_int_to_Month) {
-    Application app;
-    app.IntToMonth(1);
-    app.IntToMonth(2);
-    app.IntToMonth(3);
-    app.IntToMonth(4);
-    app.IntToMonth(5);
-    app.IntToMonth(6);
-    app.IntToMonth(7);
-    app.IntToMonth(8);
-    app.IntToMonth(9);
-    app.IntToMonth(10);
-    app.IntToMonth(11);
-    app.IntToMonth(12);
-
-    EXPECT_EQ(January, app.IntToMonth(1));
-}
-
-TEST(Application, can_CalculateWages) {
-    int argc = 6;
+TEST_F(WagesAppTest, error_when_argc_negative) {
+    int argc = -1;
     char** argv;
-    argv = new char*[argc];
-    argv[0] = const_cast<char*>("");
-    argv[1] = const_cast<char*>("CalculateWages");
-    argv[2] = const_cast<char*>("10000");
-    argv[3] = const_cast<char*>("0");
-    argv[4] = const_cast<char*>("0");
-    argv[5] = const_cast<char*>("0");
-    Application app;
+    argv = new char*[1];
 
+    Act(argc, argv);
 
-    ASSERT_NO_THROW(app(argc, argv));
+    Assert("Wrong variable");
 }
 
-TEST(Application, can_CalucateHourlyPay) {
-    int argc = 6;
+TEST_F(WagesAppTest, error_when_argv_1_is_null) {
+    const int size = 6;
+    int argc = 0;
     char** argv;
-    argv = new char*[argc];
-    argv[0] = const_cast<char*>("");
-    argv[1] = const_cast<char*>("HourlyPay");
-    argv[2] = const_cast<char*>("10000");
-    argv[3] = const_cast<char*>("0");
-    argv[4] = const_cast<char*>("0");
-    argv[5] = const_cast<char*>("0");
-    Application app;
+    argv = new char*[size];
 
+    Act(argc, argv);
 
-    ASSERT_NO_THROW(app(argc, argv));
+    Assert("Argument 1 is not correct");
 }
 
-TEST(Application, can_CalculationOvertimePayment) {
-    int argc = 6;
+TEST_F(WagesAppTest, error_when_argv_2_is_null) {
+    const int size = 6;
+    int argc = 1;
     char** argv;
-    argv = new char*[argc];
-    argv[0] = const_cast<char*>("");
-    argv[1] = const_cast<char*>("CalculationOvertimePayment");
-    argv[2] = const_cast<char*>("10000");
-    argv[3] = const_cast<char*>("0");
-    argv[4] = const_cast<char*>("0");
-    argv[5] = const_cast<char*>("0");
-    Application app;
+    argv = new char*[size];
 
+    Act(argc, argv);
 
-    ASSERT_NO_THROW(app(argc, argv));
+    Assert("Argument 2 is not correct");
 }
 
-TEST(Application, can_CalculationWagesWithoutOvertime) {
-    int argc = 6;
+TEST_F(WagesAppTest, error_when_argv_3_is_null) {
+    const int size = 6;
+    int argc = 2;
     char** argv;
-    argv = new char*[argc];
-    argv[0] = const_cast<char*>("");
-    argv[1] = const_cast<char*>("CalculationWagesWithoutOvertime");
-    argv[2] = const_cast<char*>("10000");
-    argv[3] = const_cast<char*>("0");
-    argv[4] = const_cast<char*>("0");
-    argv[5] = const_cast<char*>("0");
-    Application app;
+    argv = new char*[size];
 
+    Act(argc, argv);
 
-    ASSERT_NO_THROW(app(argc, argv));
+    Assert("Argument 3 is not correct");
+}
+
+TEST_F(WagesAppTest, error_when_argv_4_is_null) {
+    const int size = 6;
+    int argc = 3;
+    char** argv;
+    argv = new char*[size];
+
+    Act(argc, argv);
+
+    Assert("Argument 4 is not correct");
+}
+
+TEST_F(WagesAppTest, error_when_argv_5_is_null) {
+    const int size = 6;
+    int argc = 4;
+    char** argv;
+    argv = new char*[size];
+
+    Act(argc, argv);
+
+    Assert("Argument 5 is not correct");
 }

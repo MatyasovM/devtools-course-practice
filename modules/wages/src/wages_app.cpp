@@ -144,6 +144,17 @@ double administrativeLeaveHours, double overtime, Month month) {
 }
 
 std::string Application::operator()(int argc, char ** argv) {
+    if (argc == 0)
+        return "Argument 1 is not correct";
+    if (argc == 1)
+        return "Argument 2 is not correct";
+    if (argc == 2)
+        return "Argument 3 is not correct";
+    if (argc == 3)
+        return "Argument 4 is not correct";
+    if (argc == 4)
+        return "Argument 5 is not correct";
+
     if (argc > 1) {
         std::string values = argv[1];
 
@@ -165,5 +176,5 @@ std::string Application::operator()(int argc, char ** argv) {
             IntToMonth(argv[5][0] - '0'));
     }
 
-    return "";
+    return "Wrong variable";
 }
