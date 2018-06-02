@@ -1,6 +1,8 @@
 // Copyright 2018 Matyasov Mixail
 
 #include<iostream>
+#include<stdio.h>
+#include<stdlib.h>
 #include<string>
 #include"include/wages_app.h"
 
